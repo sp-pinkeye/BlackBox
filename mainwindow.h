@@ -17,7 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_comboBoxModel_currentIndexChanged(int index);
+    void on_selectAmpModel_currentIndexChanged(int index);
 
     void on_dialDrive_valueChanged(int value);
 
@@ -29,13 +29,13 @@ private slots:
 
     void on_dialVolume_valueChanged(int value);
 
-    void on_spinBox_2_valueChanged(int arg1);
+    void on_selectPreset_valueChanged(int arg1);
 
-    void on_pushButton_clicked();
+    void on_loadPreset_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_savePreset_clicked();
 
-    void on_radioDelayOn_clicked(bool checked);
+    void on_delayOnOff_clicked(bool checked);
 
     void on_dialDelayTime_valueChanged(int value);
 
@@ -45,7 +45,7 @@ private slots:
 
     void on_dialDrumsDelay_valueChanged(int value);
 
-    void on_comboBoxEffect_currentIndexChanged(int index);
+    void on_selectEffect_currentIndexChanged(int index);
 
     void on_dialSpeed_valueChanged(int value);
 
@@ -53,7 +53,7 @@ private slots:
 
     void on_dialWetDry_valueChanged(int value);
 
-    void on_radioReverbOn_clicked(bool checked);
+    void on_reverbOnOff_clicked(bool checked);
 
     void on_dialReverbTime_valueChanged(int value);
 
@@ -63,9 +63,9 @@ private slots:
 
     void on_dialCompressor_valueChanged(int value);
 
-    void on_radioEffectOnOff_clicked(bool checked);
+    void on_effectOnOff_clicked(bool checked);
 
-    void on_radioAmpOnOff_clicked(bool checked);
+    void on_ampOnOff_clicked(bool checked);
 
     // MIDI STuff
 
@@ -103,18 +103,22 @@ private:
     std::vector<unsigned char>   mainParams ;
     std::vector<unsigned char>   presetParams ;
 
-    unsigned char   currentOnOff ;
     /* These are definitions of MIDI events for the Blackbox
      */
     static const unsigned char TRANSMIT_SINGLE_PARAM    =  0x01 ;
+
     static const unsigned char TRANSMIT_PRESET          =  0x02 ;
     static const unsigned char REQUEST_STORED_PRESET    =  0x05 ;
+
     static const unsigned char SELECT_DRUMBEAT          =  0x08 ;
     static const unsigned char SELECT_PRESET            =  0x09 ;
+
     static const unsigned char REQUEST_PRESET_EDIT      =  0x0A ;
     static const unsigned char TRANSMIT_PRESET_EDIT     =  0x0B ;
+
     static const unsigned char REQUEST_MAIN_PARAMS      =  0x0E ;
     static const unsigned char TRANSMIT_MAIN_PARAMS     =  0x0F ;
+
     static const unsigned char SAVE_COMPLETE            =  0x11 ;
     static const unsigned char FACTORY_TO_USER          =  0x13 ;
     static const unsigned char USER_TO_FACTORY          =  0x14 ;
@@ -136,7 +140,7 @@ private:
      */
     static const unsigned char	MAIN_PARAMS_ACTIVE_PRESET       = 0;
     static const unsigned char	MAIN_PARAMS_ACTIVE_DRUMS        = 1;
-    static const unsigned char	MAIN_PARAMS_GUTAR_DRUM_BALANCE  = 2;
+    static const unsigned char	MAIN_PARAMS_GUITAR_DRUM_BALANCE  = 2;
     static const unsigned char	MAIN_PARAMS_FOOTSWITCH_1        = 3;
     static const unsigned char	MAIN_PARAMS_FOOTSWITCH_2        = 4;
     static const unsigned char	MAIN_PARAMS_FX_SYNC_SOURCE      = 5;

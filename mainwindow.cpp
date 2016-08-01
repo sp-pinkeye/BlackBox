@@ -12,9 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     midiSetup() ;
-    // Temp Bodge until we get sorted loading current preset EVERYTHING ON
-    currentOnOff = 0x0F ;
+
     ui->setupUi(this);
+
     getMainParams() ;
 
     getPresetEdit() ;
@@ -34,7 +34,7 @@ MainWindow::~MainWindow()
  * Single Parameter Changed to the Blackbox device
  */
 
-void MainWindow::on_comboBoxModel_currentIndexChanged(int index)
+void MainWindow::on_selectAmpModel_currentIndexChanged(int index)
 {
     std::cout << "Amp " << index << std::endl ;
 
@@ -47,7 +47,7 @@ void MainWindow::on_comboBoxModel_currentIndexChanged(int index)
  * User Preset selector
  */
 
-void MainWindow::on_spinBox_2_valueChanged( int value )
+void MainWindow::on_selectPreset_valueChanged( int value )
 {
     std::cout << "Preset Select " << value << std::endl ;
 
@@ -75,7 +75,7 @@ void MainWindow::on_spinBox_2_valueChanged( int value )
 
 }
 
-void MainWindow::on_radioAmpOnOff_clicked(bool checked)
+void MainWindow::on_ampOnOff_clicked(bool checked)
 {
     std::cout << "Amp On/Off " << checked << std::endl ;
     midi_set_devices_on_off( AMP_ONOFF, checked) ;
@@ -128,14 +128,14 @@ void MainWindow::on_dialVolume_valueChanged(int value)
 }
 
 // Rename pushbutton to LoadPreset
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_loadPreset_clicked()
 {
     // Load Preset Edit Buffer and init values
     getPresetEdit();
     updateDisplay() ;
 }
 // Rename to Save preset
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_savePreset_clicked()
 {
     savePreset() ;
 }
@@ -154,7 +154,7 @@ void MainWindow::savePreset(){
 
   waitMidiIn( &message, SAVE_COMPLETE ) ;
 }
-void MainWindow::on_radioDelayOn_clicked(bool checked)
+void MainWindow::on_delayOnOff_clicked(bool checked)
 {
     std::cout << "Delay On/Off " << checked << std::endl ;
 
@@ -239,13 +239,13 @@ void MainWindow::on_dialDrumsDelay_valueChanged(int value)
     ui->labelDelayDrums->setText(QString::number(value));
 }
 
-void MainWindow::on_radioEffectOnOff_clicked(bool checked)
+void MainWindow::on_effectOnOff_clicked(bool checked)
 {
     std::cout << "Effect On/Off " << checked << std::endl ;
     midi_set_devices_on_off( EFFECT_ONOFF, checked) ;
 }
 
-void MainWindow::on_comboBoxEffect_currentIndexChanged(int index)
+void MainWindow::on_selectEffect_currentIndexChanged(int index)
 {
     std::cout << "Effect  " << index << std::endl ;
     /*This parameter is either FX Speed, FX Freq or unused, depending on which effect is selected:
@@ -404,7 +404,7 @@ void MainWindow::on_dialWetDry_valueChanged(int value)
 }
 
 
-void MainWindow::on_radioReverbOn_clicked(bool checked)
+void MainWindow::on_reverbOnOff_clicked(bool checked)
 {
     std::cout << "Reverb On/Off " << checked << std::endl ;
     midi_set_devices_on_off( REVERB_ONOFF, checked) ;
@@ -535,13 +535,19 @@ void MainWindow::printPresetEdit( ){
     std::cout << "Preset Volume "<< ( int)presetParams.at(12) <<std::endl;
     std::cout << "Exp Pedal Assign "<< ( int)presetParams.at(13) <<std::endl;
     std::cout << "Tempo "<< ( int)presetParams.at(14) <<std::endl;
-    std::cout << "AmpFxDlyRevOn 0x"<< std::hex<<( int)presetParams.at(15)<<std::dec  <<std::endl;
+
+    std::cout << "AmpFxDlyRevOn 0x"<< std::hex<<( int)presetParams.at(DEVICE_ONOFF)<<std::dec  <<std::endl;
+    std::cout << "Amp On 0x"<< std::hex<<( int)(presetParams.at(DEVICE_ONOFF)& 0x01)<<std::dec  <<std::endl;
+    std::cout << "Fx On 0x"<< std::hex<<( int)( (presetParams.at(DEVICE_ONOFF)& 0x02 )>>1)<<std::dec  <<std::endl;
+    std::cout << "Delay On 0x"<< std::hex<<( int)( (presetParams.at(DEVICE_ONOFF)& 0x04 )>>2)<<std::dec  <<std::endl;
+    std::cout << "Reverb On 0x"<< std::hex<<( int)( (presetParams.at(DEVICE_ONOFF)& 0x08 )>>3)<<std::dec  <<std::endl;
+
     // Goes wrong here
     std::cout << "Amp Mid "<< ( int)presetParams.at(AMP_MID) <<std::endl;
     std::cout << "Linked Drumbeat "<< ( int)presetParams.at(17) <<std::endl;
     std::cout << "Unused "<< ( int)presetParams.at(18) <<std::endl;
     std::cout << "Compressor "<< ( int)presetParams.at(COMPRESSOR_LEVEL) <<std::endl;
-    std::cout << "Reverb Volume "<< ( int)presetParams.at(REVERB_LEVEL) <<std::endl;
+    std::cout << "Reverb Level "<< ( int)presetParams.at(REVERB_LEVEL) <<std::endl;
     std::cout << "Reverb Time "<< ( int)presetParams.at(REVERB_TIME) <<std::endl;
     std::cout << "Reverb HiCut "<< ( int)presetParams.at(REVERB_HICUT) <<std::endl;
     std::cout << "Unused "<< ( int)presetParams.at(23) <<std::endl;
@@ -584,10 +590,11 @@ void MainWindow::waitMidiIn(std::vector <unsigned char>* message, unsigned char 
     while ( !done ) {
 
         midiin->getMessage( message );
+
         nBytes = message->size();
 
         if ( nBytes > 0 ) {
-    //        printMessage( message, true ) ;
+            printMessage( message, true ) ;
             if( nBytes > 7 && (message->at(8) == wait )){
                 std::cout << "Wait = " << ( int)wait << std::endl;
                 std::cout << "Message 8 = " << ( int)message->at(8) << std::endl;
@@ -654,14 +661,14 @@ void MainWindow::updateDisplay(){
     // Main Params
     // Current Preset set appropriate Widget(MAIN_PARAMS_ACTIVE_PRESET)-100) ;
     // Is it the User or Factory Bank
-    ui->spinBox_2->setValue( mainParams.at(MAIN_PARAMS_ACTIVE_PRESET)) ;
+    ui->selectPreset->setValue( mainParams.at(MAIN_PARAMS_ACTIVE_PRESET)) ;
     // There will be more !
 
     // Preset
     // Here we have a lot of values to update
 
     // Amplifier Model
-    ui->comboBoxModel->setCurrentIndex( presetParams.at(AMP_MODEL)) ;
+    ui->selectAmpModel->setCurrentIndex( presetParams.at(AMP_MODEL)) ;
     ui->dialDrive->setValue( presetParams.at(AMP_DRIVE)) ;
     ui->dialBass->setValue( presetParams.at(AMP_BASS)) ;
     ui->dialMid->setValue( presetParams.at(AMP_MID)) ;
@@ -676,7 +683,7 @@ void MainWindow::updateDisplay(){
     ui->dialDrumsDelay->setValue( presetParams.at(DRUMS_DELAY)) ;
 
     // Effect
-    ui->comboBoxEffect->setCurrentIndex( presetParams.at(EFFECTS_SELECT)) ;
+    ui->selectEffect->setCurrentIndex( presetParams.at(EFFECTS_SELECT)) ;
     ui->dialSpeed->setValue( presetParams.at(EFFECTS_SPEED)) ;
     ui->dialDepth->setValue( presetParams.at(EFFECTS_DEPTH)) ;
     ui->dialWetDry->setValue( presetParams.at(EFFECTS_LEVEL)) ;
@@ -695,10 +702,10 @@ void MainWindow::updateDisplay(){
     // DELAY = ( presetParams.at( DEVICE_ONOFF ) & 0x04 )>>2
     // REVERB = ( presetParams.at( DEVICE_ONOFF ) & 0x08 )>>3
 
-    ui->radioAmpOnOff->setChecked( presetParams.at( DEVICE_ONOFF ) & 0x01 );
-    ui->radioEffectOnOff->setChecked(( presetParams.at( DEVICE_ONOFF ) & 0x02 )>>1 );
-    ui->radioDelayOn->setChecked( ( presetParams.at( DEVICE_ONOFF ) & 0x04 )>>2 );
-    ui->radioReverbOn->setChecked( ( presetParams.at( DEVICE_ONOFF ) & 0x08 )>>3 );
+    ui->ampOnOff->setChecked( presetParams.at( DEVICE_ONOFF ) & 0x01 );
+    ui->effectOnOff->setChecked(( presetParams.at( DEVICE_ONOFF ) & 0x02 )>>1 );
+    ui->delayOnOff->setChecked( ( presetParams.at( DEVICE_ONOFF ) & 0x04 )>>2 );
+    ui->reverbOnOff->setChecked( ( presetParams.at( DEVICE_ONOFF ) & 0x08 )>>3 );
 
 }
 
@@ -862,10 +869,9 @@ void MainWindow::midi_set_devices_on_off( int bitOffset, bool value ){
 
     // Get last value
 
-    currentOnOff ^= (-value ^ currentOnOff) & (1 << bitOffset);
-    presetParams[DEVICE_ONOFF]= currentOnOff ;
+    presetParams[DEVICE_ONOFF] ^= (-value ^ presetParams[DEVICE_ONOFF]) & (1 << bitOffset);
 
-    midi_transmit_single_parameter( MIDI_SELECT_TARGET, MIDI_SELECT_TARGET_PRESET, DEVICE_ONOFF, currentOnOff ) ;
+    midi_transmit_single_parameter( MIDI_SELECT_TARGET, MIDI_SELECT_TARGET_PRESET, DEVICE_ONOFF, presetParams[DEVICE_ONOFF] ) ;
 
 }
 
