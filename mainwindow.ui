@@ -1,0 +1,2270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>981</width>
+    <height>755</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QGroupBox" name="groupDelay">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>960</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>DELAY</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>940</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>9</y>
+        <width>921</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>60</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QRadioButton" name="radioDelayOn">
+           <property name="text">
+            <string>On/Off</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_11">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelDelayTime">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialDelayTime">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="minimum">
+            <number>1</number>
+           </property>
+           <property name="maximum">
+            <number>118</number>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Time</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelDelayRepeats">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialDelayRepeats">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Repeats</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_13">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelDelayLevel">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialDelayLevel">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Level</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_14">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelDelayDrums">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialDrumsDelay">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Drums&gt;Delay</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupEffects">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>380</y>
+      <width>960</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="title">
+     <string>EFFECTS</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QFrame" name="frame_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>940</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>921</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_15">
+         <item>
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_7">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Effect</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxEffect">
+           <item>
+            <property name="text">
+             <string>Temelo</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Hard Tremelo</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sawtooth Tremelo</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Stereo Pan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Hard Stereo Pan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Left to Right</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Hard Random Pan</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Tremelo 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Tremelo 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Tremelo 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Tremelo 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Tremelo 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Flange 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Flange 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Flange 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Chorus 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Chorus 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotor 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotor 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vibrato Slow</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Vibrato Medium</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Filter 1/4 Notes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Filter 1/8 Notes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Filter 1/8 Triplets</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Filter 1/16 Notes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Filter 1/16 Triplets</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Flanger 1/4 Notes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Flanger 1/8 Notes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Flanger 1/8 Triplets</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Flanger 1/16 Notes</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Random Flanger 1/16 Triplets</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Auto Wah 8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Wah Pedal</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Box 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Box 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Box 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Box 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Box 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Box 6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Swell</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Fixed Filter</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Fixed Flanger</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Talk Pedal</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sci-Fi 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sci-Fi 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sci-Fi 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sci-Fi 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sci-Fi 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 9</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 11</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 12</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 13</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 14</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 15</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 16</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 17</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 18</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 19</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Tremelo Seq 20</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 9</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 11</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 12</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 13</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 14</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 15</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 16</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 17</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 18</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 19</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Filter Seq 20</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 2</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 3</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 5</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 6</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 7</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 8</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 9</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 10</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 11</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 12</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 13</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 14</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 15</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 16</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 17</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 18</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 19</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Arpeggio Seq 20</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MIDI Velocity Filter</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MIDI Note Filter</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MIDI Controller Filter</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MIDI Velocity Flanger</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MIDI Note Flanger</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MIDI Controller Flanger</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QRadioButton" name="radioEffectOnOff">
+           <property name="text">
+            <string>On/Off</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_16">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelSpeed">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialSpeed">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="maximum">
+            <number>114</number>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelSpeedFreq">
+           <property name="text">
+            <string>Speed/Freq</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_17">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelDepth">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>40</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialDepth">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>198</number>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelDepthKey">
+           <property name="text">
+            <string>Depth/Key</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_18">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelEffectWet">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialWetDry">
+           <property name="font">
+            <font>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>Dry/Wet</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupReverb">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>560</y>
+      <width>960</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>REVERB</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QFrame" name="frame_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>940</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>921</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="0,0,0,0">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <widget class="QRadioButton" name="radioReverbOn">
+           <property name="text">
+            <string>On/Off</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelReverbTime">
+           <property name="minimumSize">
+            <size>
+             <width>80</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>TINY</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialReverbTime">
+           <property name="maximum">
+            <number>4</number>
+           </property>
+           <property name="pageStep">
+            <number>1</number>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Time</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_19">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelReverbHiCut">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialReverbHiCut">
+           <property name="value">
+            <number>99</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_13">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Hi Cut</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_20">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelReverbLevel">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialReverbLevel"/>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_15">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Level</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupAmp">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>960</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>AMPLIFIER</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <widget class="QFrame" name="frame_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>940</width>
+       <height>140</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>921</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <property name="spacing">
+          <number>6</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_model">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Model</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="margin">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBoxModel">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+           <item>
+            <property name="text">
+             <string>Bassman</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Deluxe Reverb</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Twin Reverb</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Deluxe</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Champ</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JTM 45</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Super Lead Plexi</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JCM800</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>JCM2000</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AC30</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>AC15</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Jazz Chorus</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Hiwatt DR103</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mesa Boogie MkII</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Dual Rectifier</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Soldano SLO 100</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bogner Uberschall</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Diezel VH4</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ENGL Powerball</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Peavey 5150 MkII</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bogner Ectasy</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Budda Twinmaster</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Matchless Chieftain</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Intense</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Big Mid</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Sizzle</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Super Lead Plexi EQ</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Scooped Mid</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>60's Twang</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Hollow</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Bite</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Strat Neck PU</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Solid</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Acoustic 360</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ampeg SVT</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Gallien-Krueger 800R B</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>SWR SM500</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Fuzz</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Octave Fuzz</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Mic Preamp</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QRadioButton" name="radioAmpOnOff">
+           <property name="text">
+            <string>On/Off</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>10</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Preset</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBox_2">
+           <property name="maximum">
+            <number>199</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="text">
+            <string>Load Preset</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_2">
+           <property name="text">
+            <string>Save Preset</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_21">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelCompressor">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialCompressor">
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_12">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Compressor</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelAmpDrive">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialDrive">
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+           <property name="invertedAppearance">
+            <bool>false</bool>
+           </property>
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_drive">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="autoFillBackground">
+            <bool>true</bool>
+           </property>
+           <property name="text">
+            <string>Drive</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelAmpBass">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialBass">
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_bass">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Bass</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelAmpMid">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialMid">
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_mid">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Mid</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelAmpTreble">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialTreble">
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_treble">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Treble</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="labelAmpVolume">
+           <property name="minimumSize">
+            <size>
+             <width>40</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <italic>true</italic>
+            </font>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Sunken</enum>
+           </property>
+           <property name="lineWidth">
+            <number>4</number>
+           </property>
+           <property name="midLineWidth">
+            <number>4</number>
+           </property>
+           <property name="text">
+            <string>0</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDial" name="dialVolume">
+           <property name="notchesVisible">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_volume">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Volume</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
